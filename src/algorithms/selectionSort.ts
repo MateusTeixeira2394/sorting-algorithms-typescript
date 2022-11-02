@@ -1,21 +1,4 @@
-// It will return the lowest Item position from the list
-function getTheLowestItemPosition(list: number[], initialIndex: number = 0): number {
-
-    let lowestItemIndex: number = initialIndex
-
-    for (let index = initialIndex; index < list.length; index++) {
-
-        if (list[index] < list[lowestItemIndex]) {
-
-            lowestItemIndex = index
-
-        }
-
-    }
-
-    return lowestItemIndex;
-
-}
+import getTheLowestItemPosition from "../tools/getTheLowestItemPosition.tool";
 
 // This sort works changing the current position to the next lowest item of the array
 export default function selectionSort(list: number[]): void {
