@@ -1,8 +1,7 @@
 import changeValues from "../tools/changeValues.tool";
 import getTheLowestItemPosition from "../tools/getTheLowestItemPosition.tool";
 
-// The algorithm works finding the lowest value of the list on each interaction 
-// and changing its position with the current item
+// This sort works changing the current position to the next lowest item of the array
 export default function selectionSort(list: number[]): void {
 
     for (let index = 0; index < list.length; index++) {
