@@ -1,28 +1,35 @@
-
-// This algorithm works as follows: On each interaction the 
-
+import ISortAlgorithm from "../interfaces/sortAlgorithm.interface";
 import changeValues from "../tools/changeValues.tool";
+
+
 
 // This algorithm works as follows: On each interaction 
 // the algorithm will rebalance the previous items of the current position
-export default function insertionSort(list: number[]): void {
+export default class InsertionSort implements ISortAlgorithm {
 
-    for (let index = 0; index < list.length; index++) {
+    sort(list: number[]): number[] {
 
-        // It will go through any previus items and it will
-        // change the position if the current item is smaller
-        // than the previus
-        while (
-            index > 0 &&
-            list[index] < list[index - 1]
-        ) {
+        let resultList: number[] = [...list]
 
-            changeValues(list, index, index - 1);
+        for (let index = 0; index < resultList.length; index++) {
 
-            index--;
+            // It will go through any previus items and it will
+            // change the position if the current item is smaller
+            // than the previus
+            while (
+                index > 0 &&
+                resultList[index] < resultList[index - 1]
+            ) {
+
+                changeValues(resultList, index, index - 1);
+
+                index--;
+
+            }
 
         }
 
+        return resultList
     }
 
 }
