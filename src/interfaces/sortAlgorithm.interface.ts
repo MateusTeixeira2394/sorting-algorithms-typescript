@@ -1,3 +1,3 @@
 export default interface ISortAlgorithm {
-    sort(list: number[]): number[]
+    sort(list: number[], left?: number, right?: number): number[]
 }
