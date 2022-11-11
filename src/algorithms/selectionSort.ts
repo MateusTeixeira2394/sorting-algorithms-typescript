@@ -8,19 +8,17 @@ export default class SelectionSort implements ISortAlgorithm {
 
     sort(list: number[]): number[] {
 
-        let resultList = [...list]
-
-        for (let index = 0; index < resultList.length; index++) {
+        for (let index = 0; index < list.length; index++) {
 
             // Get the lowest item position
-            let lowestItemIndex: number = getTheLowestItemPosition(resultList, index);
+            let lowestItemIndex: number = getTheLowestItemPosition(list, index);
 
             // Change value between the current position with the lowest value position
-            changeValues(resultList, index, lowestItemIndex);
+            changeValues(list, index, lowestItemIndex);
 
         }
 
-        return resultList
+        return list
 
     }
 
